@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head')%>
+</head>
+
+<body>
+    <%- include('../partials/authnav')%>
+    <div class="container">
+        <h1 class="login-head">Login</h1>
+        <form action="/register" method="post">
+            <div class="form-group">
+                <label for="fullname">Fullname</label>
+                <input type="text" name="fullname" id="fullname">
+            </div>
+            <div class="form-group">
+                <label for="email">Email </label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+            </div>
+            <div class="form-group">
+                <label for="password">password</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="btn-group">
+                <button class="btn login-btn" type="submit">Register</button>
+                <a href="/login" class="btn register-btn">I've account</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
