@@ -9,7 +9,7 @@
     <%- include('../partials/authnav')%>
     <div class="container">
         <h1 class="login-head">Welcome new user!</h1>
-        <form action="/register" method="post">
+        <form action="/auth/register" method="post">
             <div class="form-group">
                 <label for="fullname">Fullname</label>
                 <input type="text" name="fullname" id="fullname">
@@ -24,7 +24,7 @@
             </div>
             <div class="btn-group">
                 <button class="btn login-btn" type="submit">Register</button>
-                <a href="/login" class="btn register-btn">I've account</button>
+                <a href="/auth/login" class="btn register-btn">I've account</button>
             </div>
         </form>
     </div>
