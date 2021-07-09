@@ -4,10 +4,11 @@ const http = require('http')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
-const server = http.createServer(myapp)
 const PORT = process.env.PORT || 4000
 const authRouter = require('./routes/auth')
+const chatRouter = require('./routes/chat')
 const myapp = express()
+const server = http.createServer(myapp)
 
 myapp.use(bodyParser.urlencoded({ extended: true }))
 myapp.use(bodyParser.json())
@@ -38,16 +39,8 @@ myapp.get('/', (req, res) => {
     }
 })
 
-
-myapp.get('/chat', (req, res) => {
-    if(!req.session.user){
-        res.redirect('/login')
-    }else{
-        res.send('this is chat window')
-    }  
-})
-
 myapp.use('/auth', authRouter)
+myapp.use('/chat', chatRouter)
 
 server.listen(PORT, () => {
     console.log(`listening at http://localhost:${PORT}`)
