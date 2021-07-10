@@ -1,35 +1,28 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap');
+
+
+.auth-container{
+    max-width: 550px;
+    height: 70%;
+    margin: 2.8% auto;
+    padding: 20px;
+    box-shadow: 1px 1px 2px rgb(202, 201, 201),
+                -1px -1px 2px rgb(202, 201, 201);
 }
 
-.navbar{
-    width: 100vw;
-    height: 2.5rem;
-    border: 2px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.auth-mg{
+    margin-bottom: 6%;
+}
+
+.my-navbar{
+    background-color: blueviolet;
+    color: white;
+    box-shadow: 1px 2px 2px rgb(202, 201, 201),
+                -1px -1px 2px rgb(202, 201, 201);
 }
 
 .logo{
-    width: 50%;
-    font-size: 2rem;
-}
-
-.container{
-    width: 100vw;
-    height: 86vh;
-    border: 2px solid green;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.btn{
-    border: none;
-    height: 2.5rem;
-    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    margin-left: 2%;
 }

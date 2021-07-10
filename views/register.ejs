@@ -7,28 +7,57 @@
 
 <body>
     <%- include('../partials/authnav')%>
-    <div class="container">
-        <h1 class="login-head">Welcome new user!</h1>
+    <div class="auth-container">
+
+        <h1 class="auth-mg is-size-3">Welcome new user!</h1>
         <form action="/auth/register" method="post">
-            <div class="form-group">
-                <label for="fullname">Fullname</label>
-                <input type="text" name="fullname" id="fullname">
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" type="text" name="fullname" placeholder="Enter your name">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                      </span>
+                      <span class="icon is-small is-right">
+                        <i class="fas fa-check"></i>
+                      </span>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email </label>
-                <input type="email" name="email" id="email">
+
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input is-danger" type="email" placeholder="Email input" name="email" value="hello@">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+                </div>
+                <p class="help is-danger">This email is invalid</p>
             </div>
-            <div class="form-group">
-                <label for="password">password</label>
-                <input type="password" name="password" id="password">
+            <div class="field">
+                <p class="auth-mg control has-icons-left">
+                    <input class="input" type="password" placeholder="Password" name="password">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </p>
             </div>
-            <div class="btn-group">
-                <button class="btn login-btn" type="submit">Register</button>
-                <a href="/auth/login" class="btn register-btn">I've account</button>
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link">Create</button>
+                </div>
+                <div class="control">
+                    <a href="/auth/login" class="button is-link is-light">I've account</a>
+                </div>
             </div>
         </form>
     </div>
+
     <script src="js/main.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </body>
 
 </html>
