@@ -7,7 +7,7 @@ chatRouter.get('/', (req,res) => {
     if(!req.session.user){
         res.redirect('/auth/login')
     }else{
-        res.send('this is chat window ')
+        res.render('chat.ejs')
     }
 })
 

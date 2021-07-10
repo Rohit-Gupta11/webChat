@@ -19,10 +19,27 @@
     color: white;
     box-shadow: 1px 2px 2px rgb(202, 201, 201),
                 -1px -1px 2px rgb(202, 201, 201);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo{
     font-family: 'Roboto', sans-serif;
     font-weight: 800;
     margin-left: 2%;
+}
+
+.logout-btn{
+    margin-right: 20%;
+    box-shadow: 1px 1px 2px rgb(202, 201, 201),
+                -1px -1px 2px rgb(202, 201, 201);
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+    color: white;
 }

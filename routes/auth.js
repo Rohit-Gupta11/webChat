@@ -32,9 +32,6 @@ authRouter.post('/login', (req, res) => {
         bcrypt.compare(password, user.password, (err, response) => {
             if (response) {
                 req.session.user = user;
-                res.json({
-                    message: "user logined"
-                });
                 res.redirect('/chat')
             } else {
                 res.json({ message: "Wrong username/password combination" });
@@ -89,6 +86,11 @@ authRouter.post('/register', (req, res) => {
             }
         })
     }
+})
+
+authRouter.delete('/logout', (req, res) => {
+    req.session.user = null
+    res.sendStatus(200)
 })
 
 module.exports = authRouter
