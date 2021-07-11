@@ -11,7 +11,7 @@ logoutBtn.addEventListener('click', () => {
 
 //profile user
 const profileUser = document.querySelector('.profile-user')
-profileUser.innerText = 'Hi, Rohit!'
+profileUser.innerText = `Hi, Admin!`
 
 const yourList = document.querySelector('.your-list')
 

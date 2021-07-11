@@ -4,6 +4,7 @@ const http = require('http')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
+const mongoose = require('mongoose')
 const PORT = process.env.PORT || 4000
 const authRouter = require('./routes/auth')
 const chatRouter = require('./routes/chat')
@@ -41,6 +42,10 @@ myapp.get('/', (req, res) => {
 
 myapp.use('/auth', authRouter)
 myapp.use('/chat', chatRouter)
+
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+    console.log('db connected')
+})
 
 server.listen(PORT, () => {
     console.log(`listening at http://localhost:${PORT}`)
