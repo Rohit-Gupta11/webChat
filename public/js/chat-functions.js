@@ -1,3 +1,6 @@
+//gleobal variable 
+const currentUser = JSON.parse(localStorage.getItem('currentUser'))
+
 // logout button 
 const logoutBtn = document.getElementById('logout-btn')
 logoutBtn.addEventListener('click', () => {
@@ -5,16 +8,18 @@ logoutBtn.addEventListener('click', () => {
         method: 'DELETE',
     }).then(() => {
         console.log('logout')
+        localStorage.removeItem('currentUser')
         location.href = '/'
     })
 })
 
 //profile user
 const profileUser = document.querySelector('.profile-user')
-profileUser.innerText = `Hi, Admin!`
+profileUser.innerText = `Hi, ${currentUser.fullname}!`
 
+
+//userdash functions
 const yourList = document.querySelector('.your-list')
-
 
 function populateYourChat() {
     let markup = `

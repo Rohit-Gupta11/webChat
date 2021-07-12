@@ -1,7 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
-const localStorage = require('node-localStorage');
+const localStorage = require('localStorage');
 const authRouter = express.Router();
 const saltRounds = 10;
 
@@ -37,13 +37,16 @@ authRouter.post('/login', async (req, res) => {
             bcrypt.compare(password, result.password, (err, response) => {
                 if (response) {
                     req.session.user = result;
-                    res.redirect('/chat')
+                    res.json({
+                        logined : true,
+                        currentUser: req.session.user
+                    })
                 } else {
-                    res.json({ message: "Wrong username/password combination" });
+                    res.json({ logined: false, message: "Wrong username/password combination" });
                 }
             });
         } else {
-            res.json({ message: "Username doesn't exist" });
+            res.json({ logined: false, message: "Username doesn't exist" });
         }
     });
 })
@@ -63,6 +66,7 @@ authRouter.post('/register', async (req, res) => {
     let exUser = await userModel.findOne({ email: email });
     if (exUser) {
         res.json({
+            logined: false,
             message: "User already exist"
         })
     } else {
@@ -79,7 +83,10 @@ authRouter.post('/register', async (req, res) => {
                 password: hash
             }, (err, result) => {
                 req.session.user = result;
-                res.redirect('/chat')
+                res.json({
+                    logined : true,
+                    currentUser: req.session.user
+                })
             });
 
         });
