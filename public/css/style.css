@@ -7,6 +7,7 @@
 
 *{
     font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
 }
 
 .auth-container{
@@ -130,4 +131,39 @@
 .send-btn:hover{
     opacity: 0.8;
     transition: all ease;
+}
+
+.chat-history{
+    height: 90%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.incoming{
+    word-wrap: break-word;
+    max-width: 60%;
+    padding: 10px;
+    color: black;
+    background-color: rgba(194, 150, 236, 0.466)!important;
+    margin-left: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-right: 2px;
+    box-shadow: 1px 1px 2px rgb(202, 201, 201),
+    -1px -1px 2px rgb(202, 201, 201);
+}
+
+.outgoing{
+    word-wrap: break-word;
+    max-width: 60%;
+    padding: 10px;
+    color: white;
+    background-color: rgba(137, 43, 226, 0.7)!important;
+    margin-right: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: 2px;
+    box-shadow: 1px 1px 2px rgb(202, 201, 201),
+    -1px -1px 2px rgb(202, 201, 201);
 }
