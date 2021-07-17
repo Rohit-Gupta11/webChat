@@ -11,6 +11,9 @@ const chatRouter = require('./routes/chat')
 const myapp = express()
 const server = http.createServer(myapp)
 
+const {Server} = require('socket.io')
+const io = new Server(server)
+
 myapp.use(bodyParser.urlencoded({ extended: true }))
 myapp.use(bodyParser.json())
 
@@ -42,6 +45,13 @@ myapp.get('/', (req, res) => {
 
 myapp.use('/auth', authRouter)
 myapp.use('/chat', chatRouter)
+
+io.on('connection', (socket) => {
+    console.log(`user connected and id ${socket.id}`)
+    socket.on('chat message', (msg) => {
+        console.log('message: ' + msg);
+    })
+})
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
     console.log('db connected')

@@ -65,34 +65,39 @@
 .user-dash{
     width: 40%;
     height: 100%;
-    overflow-y: scroll;
     word-wrap: break-word;
     box-shadow: 2px 0px 4px rgb(202, 201, 201);
-    /* background-color: #FFE9FF; */
+    background-color: blueviolet;
 }
 
 .your-chat{
-    background-color: blueviolet;
     color: white;
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     height: 40px;
-    box-shadow: 0px 2px 4px rgb(202, 201, 201);
+    box-shadow: 0px 2px 2px rgb(202, 201, 201);
+}
+
+.your-list{
+    height: 90%;
+    overflow-y: auto;
 }
 
 .your-list-item{
+    padding: 10px;
     display: flex;
     width: 100%;
     align-items: center;
-    /* background-color: #F9F871; */
     color: black;
-    box-shadow: 0px 1px 2px rgb(202, 201, 201),
-                0px -1px 2px rgb(202, 201, 201);
     margin-top: 8px;
 }
 
-
+.your-list-subitem{
+    margin-left: 2%;
+    width: 82%;
+    color: white;
+}
 
 .chat-window{
     width: 60%;
